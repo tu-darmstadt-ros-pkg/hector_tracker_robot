@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<launch>
+  
+  <arg name="watchdog_enabled" default="true" />
+  <arg name="robot_name" default="tracker" />
+
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"/>
+
+  <param name="robot_description" command="$(find xacro)/xacro.py $(find hector_tracker_description)/urdf/tracker_default.urdf.xacro" />
+
+  <include file="$(find taurob_watchdog)/launch/watchdog.launch" />
+
+  <include file="$(find taurob_base_node)/launch/$(arg robot_name).launch">
+    <arg name="watchdog_enabled" value="$(arg watchdog_enabled)" />
+  </include>
+
+  <include file="$(find taurob_arm_ros_control)/launch/$(arg robot_name).launch">
+    <arg name="robot_name" value="$(arg robot_name)" />
+    <arg name="watchdog_enabled" value="$(arg watchdog_enabled)" />
+  </include>
+
+</launch>
