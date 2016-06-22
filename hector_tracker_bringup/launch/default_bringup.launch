@@ -15,8 +15,9 @@
     <arg name="watchdog_enabled" value="$(arg watchdog_enabled)" />
   </include>
 
-  <include file="$(find taurob_arm_ros_control)/launch/$(arg robot_name).launch">
-    <arg name="robot_name" value="$(arg robot_name)" />
+  <include file="$(find taurob_arm_ros_control)/launch/hector_tracker.launch">
+    <arg name="robot_name" value="hector_tracker" />
+    <arg name="controller_namespace" value="arm_control" />
     <arg name="watchdog_enabled" value="$(arg watchdog_enabled)" />
   </include>
 
