@@ -2,7 +2,7 @@
 
 <launch> 
   
- <node name="um7_imu" pkg="um7" type="um7_driver" output="screen">
+ <node name="um7_imu" pkg="um7" type="um7_driver" output="screen" respawn="true">
     <param name="frame_id" value="base_link" />
     <param name="rate" value="60"/>
     <param name="mag_updates" value="false"/> <!--Defaults to true, have to find out if it makes things worse in our big metal robot-->

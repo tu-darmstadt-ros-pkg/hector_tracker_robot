@@ -11,7 +11,7 @@
 
   <include file="$(find taurob_watchdog)/launch/watchdog.launch" />
 
-  <include file="$(find taurob_base_node)/launch/$(arg robot_name).launch">
+  <include file="$(find taurob_base_node)/launch/hector_tracker.launch">
     <arg name="watchdog_enabled" value="$(arg watchdog_enabled)" />
   </include>
 
