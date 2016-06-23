@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<launch> 
+  
+ <node name="um7_imu" pkg="um7" type="um7_driver" output="screen">
+    <param name="frame_id" value="base_link" />
+    <param name="rate" value="60"/>
+    <param name="mag_updates" value="false"/> <!--Defaults to true, have to find out if it makes things worse in our big metal robot-->
+    
+    <!--
+      Below is using 5 deg (0.0872665 rad) standard deviation. Might be a bit much
+      covariance is for computed orientation data
+    -->
+    <param name="covariance" value="0.29541 0.0 0.0 0.0 0.29541 0.0 0.0 0.0 0.29541"/>
+    
+    <param name="linear_acceleration_stdev" value="0.06"/>
+    
+    <!-- 0.01 rad ~= 5.6 deg standard deviation-->
+    <param name="angular_velocity_stdev" value="0.01"/>
+
+  </node>
+  
+  <include file="$(find hector_nav_launch)/launch/odom_filter_tracker.launch"/>
+  
+</launch>
