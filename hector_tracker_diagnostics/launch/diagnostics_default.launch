@@ -1,5 +1,8 @@
 <?xml version="1.0"?>
 
 <launch>
+  
+  <include file="$(find hector_tracker_diagnostics)/launch/aggregator.launch" />
+  
   <include file="$(find hector_computer_monitor)/launch/computer_monitor.launch" />
 </launch>

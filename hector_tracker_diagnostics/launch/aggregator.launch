@@ -1,0 +1,9 @@
+<launch>
+
+  <node pkg="diagnostic_aggregator" type="aggregator_node"
+      name="diag_agg" >
+    <rosparam command="load"
+              file="$(find hector_tracker_diagnostics)/config/hector_tracker.yaml" />
+    </node>
+
+</launch>

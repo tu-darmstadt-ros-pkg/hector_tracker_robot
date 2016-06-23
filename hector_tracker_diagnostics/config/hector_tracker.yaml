@@ -1,0 +1,56 @@
+pub_rate: 1.0 # Optional, defaults to 1.0
+base_path: '' # Optional, defaults to ""
+analyzers:
+  hardware:
+    type: AnalyzerGroup
+    path: Hardware
+    analyzers:
+      computers:
+        type: GenericAnalyzer
+        path: Computers
+        contains: [
+          'HD Temp',
+          'CPU Usage',
+          'CPU Temperature',
+          'HD Usage',
+          'NFS']
+      taurob_base_node:
+        type: GenericAnalyzer
+        path: Taurob Base Node
+        find_and_remove_prefix: taurob_base_node
+        num_items: 4
+      sensors:
+        type: AnalyzerGroup
+        path: Sensors
+        analyzers:
+          lidars:
+            type: AnalyzerGroup
+            path: LIDAR
+            analyzers:
+              front_hokuyo:
+                type: GenericAnalyzer
+                path: Front
+                find_and_remove_prefix: front_spinning_lidar/urg_node_front
+                num_items: 2
+              rear_hokuyo:
+                type: GenericAnalyzer
+                path: Rear
+                find_and_remove_prefix: rear_spinning_lidar/urg_node_rear
+                num_items: 2
+          vision:
+            type: AnalyzerGroup
+            path: Cameras
+            analyzers:
+              arm_thermal_cam:
+                type: GenericAnalyzer
+                path: Arm Thermal Camera
+                find_and_remove_prefix: arm_thermal_cam
+  software:
+    type: AnalyzerGroup
+    path: Software
+    analyzers:
+      odom_filter:
+        type: GenericAnalyzer
+        path: Odom Filter
+        find_and_remove_prefix: odom_filter
+        num_items: 2
