@@ -27,7 +27,7 @@
     </node>
     
     <!-- Start head lidar controller -->
-    <rosparam  file="$(find hector_multisensor_head_driver)/config/hector_multisensor_head_controller.yaml" command="load"/>
+    <rosparam  file="$(find hector_tracker_spin_lidar_bringup)/config/spin_lidar_controller_dynamixel.yaml" command="load"/>
     <node name="pan_controller_spawner" pkg="dynamixel_controllers" type="controller_spawner.py"
           args="--manager=dxl_manager
                 --port lidar_rotation_port
