@@ -6,7 +6,21 @@
         <arg name="port" value="/dev/rs485" />
   </include>
   
-  <include file="$(find hector_multisensor_head_driver)/launch/load_hokuyo_laser_scanner.launch"/>
+    <node pkg="urg_node" type="urg_node" name="head_urg_node" output="screen">
+      <rosparam>
+        publish_intensity: true
+        angle_min: -2.2689 
+        angle_max: 2.2689 
+        cluster: 1
+        skip: 0
+        ip_address: 10.0.0.60
+        frame_id: head_link_hokuyo_laser_frame
+        calibrate_time: true
+        time_offset: 0.0
+        publish_multiecho: true
+      </rosparam>
+      <remap from="scan" to="/stab_laser/scan"/>
+    </node>
   
    <node name="set_head_lidar_velocity" pkg="rostopic" type="rostopic" output="screen" args="pub -l /head_lidar_controller/command std_msgs/Float64 'data: 5'"/>
   
