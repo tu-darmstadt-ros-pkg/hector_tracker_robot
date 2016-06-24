@@ -2,7 +2,7 @@
 
 <launch> 
   
-  <include file="$(find hector_multisensor_head_driver)/launch/load_head_lidar_dynamixel_controller.launch">
+  <include file="$(find hector_tracker_spin_lidar_bringup)/launch/load_spin_lidar_controller.launch">
         <arg name="port" value="/dev/rs485" />
   </include>
   
