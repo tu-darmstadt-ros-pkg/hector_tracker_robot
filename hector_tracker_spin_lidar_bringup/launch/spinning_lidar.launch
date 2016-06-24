@@ -14,7 +14,7 @@
         cluster: 1
         skip: 0
         ip_address: 10.0.0.60
-        frame_id: head_link_hokuyo_laser_frame
+        frame_id: spin_lidar_link_hokuyo_laser_frame
         calibrate_time: true
         time_offset: 0.0
         publish_multiecho: true
