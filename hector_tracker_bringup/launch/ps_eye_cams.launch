@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+
+<launch>
+  <include file="$(find hector_pseye_camera)/launch/dual_cam.launch" />
+</launch>
+  
