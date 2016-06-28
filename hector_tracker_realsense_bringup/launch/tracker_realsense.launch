@@ -16,7 +16,7 @@
   <arg name="depth_width"     default="480" />
   <arg name="depth_height"    default="360" />
   <arg name="depth_fps"       default="30" />
-  <arg name="color_fps"       default="10" />
+  <arg name="color_fps"       default="15" />
 
   <!-- Use OpenNI's factory-calibrated depth->RGB registration? -->
   <arg name="depth_registration" default="false" />
@@ -59,11 +59,13 @@
       <arg name="name"                value="$(arg manager)" />
       <arg name="debug"               value="$(arg debug)" />
       <arg name="num_worker_threads"  value="$(arg num_worker_threads)" />
+      <arg name="respawn"                         value="$(arg respawn)" />
     </include>
 
     <!-- Load driver -->
     <include if="$(arg load_driver)"
-             file="$(find realsense_camera)/launch/includes/realsense_r200_nodelet.launch.xml">
+             file="$(find hector_tracker_realsense_bringup)/launch/realsense_r200_nodelet.launch.xml">
+      <arg name="respawn"                         value="$(arg respawn)" />       
       <arg name="camera"                    value="$(arg camera)" />
       <arg name="serial_no"                 value="$(arg serial_no)" />
       <arg name="usb_port_id"               value="$(arg usb_port_id)" />
