@@ -20,5 +20,9 @@
     <arg name="controller_namespace" value="arm_control" />
     <arg name="watchdog_enabled" value="$(arg watchdog_enabled)" />
   </include>
+  
+  <include file="$(find taurob_claw_node)/launch/claw.launch">
+  </include>
+
 
 </launch>
