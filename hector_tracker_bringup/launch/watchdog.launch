@@ -2,6 +2,6 @@
 
 <launch>
   
-  <node pkg="taurob_watchdog_client" type="taurob_watchdog_client" name="taurob_watchdog_client" args="127.0.0.1"/>
+  <node pkg="taurob_watchdog_client" type="taurob_watchdog_client" name="watchdog_node" args="127.0.0.1"/>
 
 </launch>
