@@ -19,7 +19,7 @@
         time_offset: 0.0
         publish_multiecho: true
       </rosparam>
-      <remap from="last" to="/stab_laser/scan"/>
+      <remap from="last" to="/spin_laser/scan"/>
     </node>
   
    <!--<node name="set_head_lidar_velocity" pkg="rostopic" type="rostopic" output="screen" args="pub -l /head_lidar_controller/command std_msgs/Float64 'data: 5'"/>-->
