@@ -3,7 +3,7 @@
 
   <!-- "camera" should be a user friendly string to uniquely identify the device namespace.
        All topics are pushed down into the "camera" namespace, and it is prepended to tf frame ids. -->
-  <arg name="camera"          default="camera" />
+  <arg name="camera"          default="arm_rgbd_cam" />
 
   <!-- "serial_no" or "usb_port_id" should be a unique identifier to connect to a device. -->
   <arg name="serial_no"     default="" />
