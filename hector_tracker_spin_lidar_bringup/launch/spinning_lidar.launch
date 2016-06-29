@@ -6,7 +6,7 @@
         <arg name="port" value="/dev/rs485" />
   </include>
   
-    <node pkg="urg_node" type="urg_node" name="head_urg_node" output="screen">
+    <node pkg="urg_node" type="urg_node" name="head_urg_node" output="screen"  ns="spin_laser">
       <rosparam>
         publish_intensity: true
         angle_min: -2.2689 
