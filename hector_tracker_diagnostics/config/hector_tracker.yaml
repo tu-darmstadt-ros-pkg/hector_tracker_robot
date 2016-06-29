@@ -18,7 +18,7 @@ analyzers:
         type: GenericAnalyzer
         path: Taurob Base Node
         find_and_remove_prefix: taurob_base_node
-        num_items: 4
+        num_items: 3
       sensors:
         type: AnalyzerGroup
         path: Sensors
@@ -27,15 +27,10 @@ analyzers:
             type: AnalyzerGroup
             path: LIDAR
             analyzers:
-              front_hokuyo:
+              spin_hokuyo:
                 type: GenericAnalyzer
-                path: Front
-                find_and_remove_prefix: front_spinning_lidar/urg_node_front
-                num_items: 2
-              rear_hokuyo:
-                type: GenericAnalyzer
-                path: Rear
-                find_and_remove_prefix: rear_spinning_lidar/urg_node_rear
+                path: Spinning
+                find_and_remove_prefix: spin_laser/head_urg_node
                 num_items: 2
           vision:
             type: AnalyzerGroup
@@ -45,6 +40,26 @@ analyzers:
                 type: GenericAnalyzer
                 path: Arm Thermal Camera
                 find_and_remove_prefix: arm_thermal_cam
+      arm:
+        type: GenericAnalyzer
+        path: Arm
+        find_and_remove_prefix: arm_control
+        num_items: 4
+      jointcontroller:
+        type: GenericAnalyzer
+        path: Joint Controller
+        find_and_remove_prefix: Joint Controller (
+        num_items: 3
+      bus:
+        type: GenericAnalyzer
+        path: Dynamixel Serial Bus
+        find_and_remove_prefix: Dynamixel Serial Bus (
+        num_items: 2
+      motor:
+        type: GenericAnalyzer
+        path: Robotis Motor
+        find_and_remove_prefix: Robotis Dynamixel
+        num_items: 3
   software:
     type: AnalyzerGroup
     path: Software
