@@ -1,0 +1,9 @@
+joints:
+    stab_laser_roll:
+        offset: 0.0
+        topic_name: "stab_laser_roll_joint"
+        joint_name: "stab_laser_roll_joint"
+    stab_laser_pitch:
+        offset: 0.0
+        topic_name: "stab_laser_pitch_joint"
+        joint_name: "stab_laser_pitch_joint"
