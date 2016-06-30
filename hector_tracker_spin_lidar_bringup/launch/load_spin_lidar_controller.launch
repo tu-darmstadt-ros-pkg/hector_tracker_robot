@@ -21,7 +21,7 @@
                     port_name: "$(arg port)"
                     baud_rate: 57142
                     min_motor_id: 5
-                    max_motor_id: 7
+                    max_motor_id: 8
                     update_rate: 20
         </rosparam>
     </node>
@@ -31,7 +31,9 @@
     <node name="pan_controller_spawner" pkg="dynamixel_controllers" type="controller_spawner.py"
           args="--manager=dxl_manager
                 --port lidar_rotation_port
-                head_lidar_controller"
+                head_lidar_controller
+		stab_laser_roll_controller
+		stab_laser_pitch_controller"
           output="screen"/>
          
     
