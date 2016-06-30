@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 
-<launch> 
-  
+<launch>
+
   <include file="$(find hector_tracker_spin_lidar_bringup)/launch/load_spin_lidar_controller.launch">
         <arg name="port" value="/dev/rs485" />
   </include>
-  
+
     <node pkg="urg_node" type="urg_node" name="head_urg_node" output="screen"  ns="spin_laser">
       <rosparam>
         publish_intensity: true
-        angle_min: -2.2689 
-        angle_max: 2.2689 
+        angle_min: -2.2689
+        angle_max: 2.2689
         cluster: 1
         skip: 0
         ip_address: 10.0.0.60
@@ -21,7 +21,12 @@
       </rosparam>
       <remap from="last" to="/spin_laser/scan"/>
     </node>
-  
+
+    <node name="stab_laser_control" pkg="hector_dynamixel_ros_control_wrapper" type="hector_dynamixel_ros_control_wrapper_node" output="screen">
+     <rosparam command="load" file="$(find hector_tracker_spin_lidar_bringup)/config/stab_laser.yaml" />
+     <remap from="~/joint_states" to="/joint_states"/>
+    </node>
+
    <!--<node name="set_head_lidar_velocity" pkg="rostopic" type="rostopic" output="screen" args="pub -l /head_lidar_controller/command std_msgs/Float64 'data: 5'"/>-->
-  
+
 </launch>

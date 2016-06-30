@@ -10,7 +10,8 @@ head_lidar_controller:
         init: 0
         min: 0
         max: 4095
-stab_laser_roll_controller:
+
+stab_laser_roll_joint:
     controller:
         package: dynamixel_controllers
         module: joint_position_controller
@@ -22,7 +23,8 @@ stab_laser_roll_controller:
         init: 512
         min: 0
         max: 1023
-stab_laser_pitch_controller:
+        
+stab_laser_pitch_joint:
     controller:
         package: dynamixel_controllers
         module: joint_position_controller
