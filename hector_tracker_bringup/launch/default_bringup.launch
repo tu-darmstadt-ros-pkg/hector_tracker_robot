@@ -24,5 +24,8 @@
   <include file="$(find taurob_claw_node)/launch/claw.launch">
   </include>
 
+  <include file="$(find hector_nano_driver)/launch/hector_nano_driver.launch">
+  </include>
+
 
 </launch>
