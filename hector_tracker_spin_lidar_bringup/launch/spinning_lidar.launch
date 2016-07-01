@@ -26,6 +26,13 @@
      <rosparam command="load" file="$(find hector_tracker_spin_lidar_bringup)/config/stab_laser.yaml" />
      <remap from="~/joint_states" to="/joint_states"/>
     </node>
+    
+    
+    <rosparam file="$(find hector_tracker_spin_lidar_bringup)/config/joint_state_controller.yaml" command="load" ns="stab_laser_control"/>
+    <node name="joint_state_controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="joint_state_controller" ns="stab_laser_control"/>
+
+    <rosparam file="$(find hector_tracker_spin_lidar_bringup)/config/stab_laser_control_joint_trajectory_controller.yaml" command="load" ns="stab_laser_control"/>
+    <node name="joint_trajectory_controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="stab_laser_traj_controller" ns="stab_laser_control"/>    
 
    <!--<node name="set_head_lidar_velocity" pkg="rostopic" type="rostopic" output="screen" args="pub -l /head_lidar_controller/command std_msgs/Float64 'data: 5'"/>-->
 

@@ -1,0 +1,7 @@
+stab_laser_traj_controller:
+  type: "position_controllers/JointTrajectoryController"
+  joints:
+      - stab_laser_roll_joint
+      - stab_laser_pitch_joint
+
+

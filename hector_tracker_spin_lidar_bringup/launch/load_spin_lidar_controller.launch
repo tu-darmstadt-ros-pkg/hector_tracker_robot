@@ -32,11 +32,17 @@
           args="--manager=dxl_manager
                 --port lidar_rotation_port
                 head_lidar_controller
-            		stab_laser_roll_controller
-            		stab_laser_pitch_controller"
+            	stab_laser_roll_joint
+            	stab_laser_pitch_joint"
           output="screen"/>
 
 
      <!-- Start the Dynamixel Joint States Publisher -->
    <node ns="/head_lidar_controller" name="dynamixel_joint_states_publisher" pkg="hector_multisensor_head_driver" type="head_dynamixel_state_to_joint_state_node" output="screen" />
+   
+   <!--
+   <node ns="/stab_laser_roll_controller" name="dynamixel_joint_states_publisher" pkg="hector_multisensor_head_driver" type="head_dynamixel_state_to_joint_state_node" output="screen" />
+   <node ns="/stab_laser_pitch_controller" name="dynamixel_joint_states_publisher" pkg="hector_multisensor_head_driver" type="head_dynamixel_state_to_joint_state_node" output="screen" />
+   -->            
+   
 </launch>
