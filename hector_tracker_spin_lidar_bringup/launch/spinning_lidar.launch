@@ -25,6 +25,8 @@
     <node name="stab_laser_control" pkg="hector_dynamixel_ros_control_wrapper" type="hector_dynamixel_ros_control_wrapper_node" output="screen">
      <rosparam command="load" file="$(find hector_tracker_spin_lidar_bringup)/config/stab_laser.yaml" />
      <remap from="~/joint_states" to="/joint_states"/>
+     <remap from="/stab_laser_pitch_joint/command" to="/stab_laser_pitch_joint/command_remapped_away"/>
+     <remap from="/stab_laser_roll_joint/command" to="/stab_laser_roll_joint/command_remapped_away"/>
     </node>
     
     
