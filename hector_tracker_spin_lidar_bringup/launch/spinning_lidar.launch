@@ -31,8 +31,10 @@
     <rosparam file="$(find hector_tracker_spin_lidar_bringup)/config/joint_state_controller.yaml" command="load" ns="stab_laser_control"/>
     <node name="joint_state_controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="joint_state_controller" ns="stab_laser_control"/>
 
+    <!--    
     <rosparam file="$(find hector_tracker_spin_lidar_bringup)/config/stab_laser_control_joint_trajectory_controller.yaml" command="load" ns="stab_laser_control"/>
-    <node name="joint_trajectory_controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="stab_laser_traj_controller" ns="stab_laser_control"/>    
+    <node name="joint_trajectory_controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="stab_laser_traj_controller" ns="stab_laser_control"/>
+    -->
     
       <param name="stab_laser/hokuyo_node/port" value="/dev/ttyACM0" />
       <node pkg="hokuyo_node" type="hokuyo_node" name="hokuyo_node" ns="stab_laser" output="screen">
