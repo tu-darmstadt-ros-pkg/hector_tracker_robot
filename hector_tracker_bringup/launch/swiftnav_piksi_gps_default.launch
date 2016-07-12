@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<launch>
+   <node pkg="swiftnav_piksi" type="piksi_node" name="piksi_node" output="screen">
+     <param name="port" value="/dev/piksi" />
+   </node>
+</launch>

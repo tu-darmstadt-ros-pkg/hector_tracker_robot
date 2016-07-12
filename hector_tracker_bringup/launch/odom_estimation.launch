@@ -9,7 +9,7 @@
     
     <param name="frame_id" value="base_link" />
     <param name="rate" value="60"/>
-    <param name="mag_updates" value="false"/> <!--Defaults to true, have to find out if it makes things worse in our big metal robot-->
+    <param name="mag_updates" value="true"/> <!--Defaults to true, have to find out if it makes things worse in our big metal robot-->
     
     <!--
       Below is using 5 deg (0.0872665 rad) standard deviation. Might be a bit much
