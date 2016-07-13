@@ -88,6 +88,7 @@
     </include>
 
     <!-- Load standard constellation of processing nodelets -->
+    <!--    
     <include file="$(find rgbd_launch)/launch/includes/processing.launch.xml">
       <arg name="manager"                         value="$(arg manager)" />
       <arg name="rgb"                             value="$(arg rgb)" />
@@ -105,6 +106,7 @@
       <arg name="hw_registered_processing"        value="$(arg hw_registered_processing)" />
       <arg name="sw_registered_processing"        value="$(arg sw_registered_processing)" />
     </include>
+    -->
 
   </group> <!-- camera -->
 

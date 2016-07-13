@@ -35,7 +35,7 @@
 
      <!-- "enable_pointcloud" is set to false by default because rgbd launch uses standard ROS packages
           to generate point clouds. -->
-    <arg name="enable_pointcloud"   default="false" />
+    <arg name="enable_pointcloud"   default="true" />
 <!-- RealSense -->
 
     <node pkg="nodelet" type="nodelet" name="camera_nodelet"
