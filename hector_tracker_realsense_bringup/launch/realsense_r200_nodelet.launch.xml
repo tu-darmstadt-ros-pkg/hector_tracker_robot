@@ -39,7 +39,7 @@
 <!-- RealSense -->
 
     <node pkg="nodelet" type="nodelet" name="camera_nodelet"
-        args="load realsense_camera/RealsenseNodelet $(arg manager) $(arg bond)"
+        args="load realsense_camera/R200Nodelet $(arg manager) $(arg bond)"
         respawn="$(arg respawn)"  >
         <param name="serial_no"               type="str"  value="$(arg serial_no)" />
         <param name="usb_port_id"             type="str"  value="$(arg usb_port_id)" />
