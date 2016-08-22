@@ -13,7 +13,6 @@
 
   <include file="$(find taurob_base_node)/launch/hector_tracker.launch">
     <arg name="watchdog_enabled" value="$(arg watchdog_enabled)" />
-    <remap from="/flipper_control/joint_states" to="/joint_states" />
   </include>
 
   <include file="$(find taurob_arm_ros_control)/launch/hector_tracker.launch">
