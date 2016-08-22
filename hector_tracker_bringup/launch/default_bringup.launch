@@ -2,7 +2,7 @@
 
 <launch>
   
-  <arg name="watchdog_enabled" default="false" />
+  <arg name="watchdog_enabled" default="true" />
   <arg name="robot_name" default="tracker" />
 
   <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"/>
