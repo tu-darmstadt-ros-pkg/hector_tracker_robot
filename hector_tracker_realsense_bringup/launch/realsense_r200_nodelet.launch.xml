@@ -62,14 +62,9 @@
         <param name="ir_frame_id"             type="str"  value="$(arg camera)_$(arg ir)_frame" />
         <param name="ir2_frame_id"            type="str"  value="$(arg camera)_$(arg ir2)_frame" />
 
-        <remap from="camera/depth/image_raw"        to="$(arg depth)/image_raw" />
-        <remap from="camera/color/image_raw"        to="$(arg rgb)/image_raw" />
-        <remap from="camera/infrared1/image_raw"    to="$(arg ir)/image_raw" />
-        <remap from="camera/infrared2/image_raw"    to="$(arg ir2)/image_raw" />
-        <remap from="camera/depth/points"           to="$(arg depth)/points" />
-        <remap from="camera/depth/camera_info"      to="$(arg depth)/camera_info" />
-        <remap from="camera/color/camera_info"      to="$(arg rgb)/camera_info" />
-        <remap from="camera/infrared1/camera_info"  to="$(arg ir)/camera_info" />
-        <remap from="camera/infrared2/camera_info"  to="$(arg ir2)/camera_info" />
+        <remap from="depth"        to="$(arg depth)" />
+        <remap from="color"        to="$(arg rgb)" />
+        <remap from="infrared1"    to="$(arg ir)" />
+        <remap from="infrared2"    to="$(arg ir2)" />
     </node>
 </launch>
