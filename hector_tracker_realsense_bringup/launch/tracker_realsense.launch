@@ -36,11 +36,11 @@
   <arg name="rgb_processing"                  default="true"/>
   <arg name="ir_processing"                   default="true"/>
   <arg name="depth_processing"                default="true"/>
-  <arg name="depth_registered_processing"     default="true"/>
-  <arg name="disparity_processing"            default="true"/>
-  <arg name="disparity_registered_processing" default="true"/>
+  <arg name="depth_registered_processing"     default="false"/>
+  <arg name="disparity_processing"            default="false"/>
+  <arg name="disparity_registered_processing" default="false"/>
   <arg name="hw_registered_processing"        default="false" />
-  <arg name="sw_registered_processing"        default="true" />
+  <arg name="sw_registered_processing"        default="false" />
 
   <!-- Disable respawn topics by default -->
   <arg name="respawn" default="true" />
@@ -88,7 +88,7 @@
     </include>
 
     <!-- Load standard constellation of processing nodelets -->
-    <!--    
+    <!--
     <include file="$(find rgbd_launch)/launch/includes/processing.launch.xml">
       <arg name="manager"                         value="$(arg manager)" />
       <arg name="rgb"                             value="$(arg rgb)" />
