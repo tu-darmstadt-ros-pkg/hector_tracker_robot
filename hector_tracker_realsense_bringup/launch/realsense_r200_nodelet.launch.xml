@@ -66,5 +66,14 @@
         <remap from="color"        to="$(arg rgb)" />
         <remap from="infrared1"    to="$(arg ir)" />
         <remap from="infrared2"    to="$(arg ir2)" />
+        
+        <!-- The following two tags map the correctly aligned depth from zhang-xin's fork
+             (https://github.com/zhang-xin/realsense/commit/926fe72d215ef29fa8f9409ebc234250d396e8e7)
+             to where the topics used to be when using the standard intel/ros configuration,
+             so no further modification to the subscribing nodes are necessary.
+        -->
+        <remap from="depth_aligned"        to="/arm_rgbd_cam/depth_registered/sw_registered" />
+        <remap from="/arm_rgbd_cam/depth_registered/sw_registered/image_raw" to="/arm_rgbd_cam/depth_registered/sw_registered/image_rect_raw" />
+
     </node>
 </launch>
