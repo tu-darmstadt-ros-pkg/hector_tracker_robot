@@ -61,6 +61,8 @@
         <param name="color_optical_frame_id"  type="str"  value="$(arg camera)_$(arg rgb)_optical_frame" />
         <param name="ir_frame_id"             type="str"  value="$(arg camera)_$(arg ir)_frame" />
         <param name="ir2_frame_id"            type="str"  value="$(arg camera)_$(arg ir2)_frame" />
+        
+        <param name="r200_dc_preset"          value="0" />
 
         <remap from="depth"        to="$(arg depth)" />
         <remap from="color"        to="$(arg rgb)" />
