@@ -1,9 +1,10 @@
 <!-- Sample launch file for using RealSense R200 camera with rgbd_launch -->
+<!-- Copied and modified from r200_nodelet_rgbd.launch -->
 <launch>
 
   <!-- "camera" should be a user friendly string to uniquely identify the device namespace.
        All topics are pushed down into the "camera" namespace, and it is prepended to tf frame ids. -->
-  <arg name="camera"          default="camera" />
+  <arg name="camera"          default="arm_rgbd_cam" />
 
   <!-- Type of RealSense camera -->
   <arg name="camera_type"     default="R200" />
@@ -19,7 +20,7 @@
   <arg name="depth_width"     default="480" />
   <arg name="depth_height"    default="360" />
   <arg name="depth_fps"       default="30" />
-  <arg name="color_fps"       default="30" />
+  <arg name="color_fps"       default="15" />
 
   <!-- Arguments for remapping all device namespaces -->
   <arg name="depth"            default="depth" />
@@ -51,7 +52,7 @@
   <arg name="sw_registered_processing"        default="true" />
 
   <!-- Disable respawn topics by default -->
-  <arg name="respawn" default="false" />
+  <arg name="respawn" default="true" />
 
   <!-- Worker threads for the nodelet manager -->
   <arg name="num_worker_threads" default="4" />
@@ -62,15 +63,16 @@
     <!-- Start nodelet manager in provided namespace -->
     <arg name="manager" value="$(arg camera)_nodelet_manager" />
     <arg name="debug" default="false" /> <!-- Run manager in GDB? -->
-    <include file="$(find rgbd_launch)/launch/includes/manager.launch.xml">
+    <include file="$(find hector_tracker_realsense_bringup)/launch/tracker_realsense_manager.launch">
       <arg name="name"                value="$(arg manager)" />
       <arg name="debug"               value="$(arg debug)" />
       <arg name="num_worker_threads"  value="$(arg num_worker_threads)" />
+      <arg name="respawn"             value="$(arg respawn)" />
     </include>
 
     <!-- Load driver -->
     <include if="$(arg load_driver)"
-             file="$(find realsense_camera)/launch/includes/nodelet_rgbd.launch.xml">
+             file="$(find hector_tracker_realsense_bringup)/launch/realsense_r200_nodelet.launch.xml">
       <arg name="manager"                   value="$(arg manager)" />
       <arg name="camera"                    value="$(arg camera)" />
       <arg name="camera_type"               value="$(arg camera_type)" />
