@@ -73,6 +73,7 @@
     <!-- Load driver -->
     <include if="$(arg load_driver)"
              file="$(find hector_tracker_realsense_bringup)/launch/realsense_r200_nodelet.launch.xml">
+      <arg name="respawn"                   value="$(arg respawn)" />
       <arg name="manager"                   value="$(arg manager)" />
       <arg name="camera"                    value="$(arg camera)" />
       <arg name="camera_type"               value="$(arg camera_type)" />

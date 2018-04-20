@@ -35,9 +35,11 @@
           to generate point clouds. -->
     <arg name="enable_pointcloud"   default="true" />
 <!-- realsense_camera -->
+    
+    <arg name="respawn" default="true" />
 
     <node pkg="nodelet" type="nodelet" name="driver"
-        args="load realsense_camera/$(arg camera_type)Nodelet $(arg manager)">
+        args="load realsense_camera/$(arg camera_type)Nodelet $(arg manager)" respawn="$(arg respawn)" >
         <param name="serial_no"               type="str"  value="$(arg serial_no)" />
         <param name="usb_port_id"             type="str"  value="$(arg usb_port_id)" />
         <param name="camera_type"             type="str"  value="$(arg camera_type)" />
